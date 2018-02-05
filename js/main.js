@@ -39,6 +39,10 @@ var controller = {
 	startStopAudio: function(){
 		if(!model.playing){
 			this.play();
+			model.playing = true;
+		} else {
+			this.stop();
+			model.playing = false;
 		}
 	},
 	getAudio: function(){
@@ -53,10 +57,13 @@ var controller = {
 		http.send();
 	},
 	play: function(){
-		var playSound = ctx.createBufferSource();
-		playSound.buffer = model.audioBuffer;
-		playSound.start(ctx.currentTime);
-		playSound.connect(ctx.destination);
+		this.playSound = ctx.createBufferSource();
+		this.playSound.buffer = model.audioBuffer;
+		this.playSound.start(ctx.currentTime);
+		this.playSound.connect(ctx.destination);
+	},
+	stop: function(){
+		this.playSound.stop(ctx.currentTime);
 	}
 }
 
