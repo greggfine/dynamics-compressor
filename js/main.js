@@ -2,7 +2,7 @@ var ctx = new (window.AudioContext || window.webkitAudioContext)();
 
 var model = {
 	playing: false,
-	audioBuffer: null
+	audioBuffer: null,
 }
 
 var view = {
@@ -17,12 +17,23 @@ var view = {
 		});
 
 		threshold.addEventListener("input", function(){
+			controller.changeThreshold(this.value);
 		});
 
 		ratio.addEventListener("input", function(){
+			controller.changeRatio(this.value);
+		});
+
+		attack.addEventListener("input", function(){
+			controller.changeAttack(this.value);
+		});
+
+		release.addEventListener("input", function(){
+			controller.changeRelease(this.value);
 		});
 
 		makeUpGain.addEventListener("input", function(){
+			controller.changeGain(this.value);
 		});
 		controller.getAudio();
 
@@ -47,7 +58,7 @@ var controller = {
 	},
 	getAudio: function(){
 		var http = new XMLHttpRequest();
-		http.open("GET", "/audio/drums.wav", true)
+		http.open("GET", "/audio/tune.mp3", true)
 		http.responseType = "arraybuffer";
 		http.onload = function(){
 			ctx.decodeAudioData(http.response, function(buffer) {
@@ -59,14 +70,27 @@ var controller = {
 	play: function(){
 		this.playSound = ctx.createBufferSource();
 		this.playSound.buffer = model.audioBuffer;
-		var compressor = ctx.createDynamicsCompressor();
-		compressor.threshold.value = -60;
-		compressor.ratio.value = 8;
-		compressor.attack.value = 0.11;
-		compressor.release.value = 0.10;
-		this.playSound.connect(compressor);
-		compressor.connect(ctx.destination);
+		this.amp = ctx.createGain();
+		this.compressor = ctx.createDynamicsCompressor();
+		this.playSound.connect(this.compressor);
+		this.compressor.connect(this.amp);
+		this.amp.connect(ctx.destination);
 		this.playSound.start(ctx.currentTime);
+	},
+	changeThreshold: function(threshVal){
+		this.compressor.threshold.value = threshVal;
+	},
+	changeRatio: function(ratioVal){
+		this.compressor.ratio.value = ratioVal;
+	},
+	changeGain: function(gainVal){
+		this.amp.gain.value = gainVal;
+	},
+	changeAttack: function(attackVal){
+		this.compressor.attack.value = attackVal;
+	},
+	changeRelease: function(releaseVal){
+		this.compressor.release.value = releaseVal;
 	},
 	stop: function(){
 		this.playSound.stop(ctx.currentTime);

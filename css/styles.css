@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-	width: 960px;
+	/*width: 960px;*/
 	margin: 0 auto;
 }
 
@@ -23,12 +23,14 @@ body {
 .control-panel {
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
 	margin-top: 60px;
 	border: 5px double;
 	padding: 200px;
 }
 
-.threshold-section, .ratio-section, .make-up-gain-section {
+.threshold-section, .ratio-section, .make-up-gain-section, 
+.attack-section, .release-section {
 	display: flex;
 	flex-direction: column;
 }
