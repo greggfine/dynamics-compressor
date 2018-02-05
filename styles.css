@@ -1,0 +1,43 @@
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font: 16px Arial, sans-serif;
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.play-stop-btn {
+	text-align: center;
+	margin-top: 60px;
+}
+
+.play-stop-btn button {
+		font-size: 2rem;
+		padding: 10px;
+}
+
+.control-panel {
+	display: flex;
+	justify-content: center;
+	margin-top: 60px;
+	border: 5px double;
+	padding: 200px;
+}
+
+.control-1, .control-2, .control-3 {
+	display: flex;
+	flex-direction: column;
+}
+
+.control-panel label {
+	text-align: center;
+}
+
+.control-panel .slider {
+	padding: 50px;
+	margin: 30px;
+}
