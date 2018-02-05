@@ -3,30 +3,48 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 	font: 16px Arial, sans-serif;
+	background-image: url("https://i.pinimg.com/originals/f3/b5/50/f3b5502262ec2ed72977887b3dbce36a.jpg");
+	background-blend-mode: multiply;
+	background-color: #DF9936
 }
 
 .container {
-	/*width: 960px;*/
+	width: 1340px;
 	margin: 0 auto;
 }
 
 .play-stop-btn {
 	text-align: center;
-	margin-top: 60px;
+	margin-top: 90px;
 }
 
 .play-stop-btn button {
-		font-size: 2rem;
-		padding: 10px;
+		font-size: 3rem;
+		color: #fff;
+		padding: 30px;
+		background: red;
+		box-shadow: -10px 12px 15px black;
+		border-radius: 6px;
+		transition: transform 0.2s ease;
+		outline: none;
+}
+
+.play-stop-btn button:hover {
+	cursor: pointer;
+	transform: scale(1.03);
 }
 
 .control-panel {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	margin-top: 60px;
-	border: 5px double;
+	margin-top: 90px;
+	border: 15px double;
 	padding: 200px;
+	background: #cf4a45;
+	font-size: 2rem;
+	font-weight: 800;
+	color: #DF9936;
 }
 
 .threshold-section, .ratio-section, .make-up-gain-section, 
@@ -37,6 +55,7 @@ body {
 
 .control-panel label {
 	text-align: center;
+	color: yellow;
 }
 
 .control-panel .slider {

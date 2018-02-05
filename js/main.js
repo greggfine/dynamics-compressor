@@ -58,7 +58,7 @@ var controller = {
 	},
 	getAudio: function(){
 		var http = new XMLHttpRequest();
-		http.open("GET", "/audio/tune.mp3", true)
+		http.open("GET", "/audio/tune2.wav", true)
 		http.responseType = "arraybuffer";
 		http.onload = function(){
 			ctx.decodeAudioData(http.response, function(buffer) {
