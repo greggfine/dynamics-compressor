@@ -28,7 +28,7 @@ body {
 	padding: 200px;
 }
 
-.control-1, .control-2, .control-3 {
+.threshold-section, .ratio-section, .make-up-gain-section {
 	display: flex;
 	flex-direction: column;
 }
