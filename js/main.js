@@ -59,8 +59,14 @@ var controller = {
 	play: function(){
 		this.playSound = ctx.createBufferSource();
 		this.playSound.buffer = model.audioBuffer;
+		var compressor = ctx.createDynamicsCompressor();
+		compressor.threshold.value = -60;
+		compressor.ratio.value = 8;
+		compressor.attack.value = 0.11;
+		compressor.release.value = 0.10;
+		this.playSound.connect(compressor);
+		compressor.connect(ctx.destination);
 		this.playSound.start(ctx.currentTime);
-		this.playSound.connect(ctx.destination);
 	},
 	stop: function(){
 		this.playSound.stop(ctx.currentTime);
