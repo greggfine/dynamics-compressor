@@ -3,10 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Dynamics Compressor</title>
+
+	<script
+	  src="http://code.jquery.com/jquery-3.3.1.min.js"
+	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	  crossorigin="anonymous"></script>
+	<script
+	  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+	  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+	  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
+	<link rel="stylesheet" href="hotSneaks.css">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
 
 <div class="container">
 
@@ -18,40 +28,31 @@
 
 		<div class="threshold-section">
 			<label for="threshold">Threshold</label>
-			<input type="range" id="threshold" class="slider"
-			min="-100" max="0" step="0.01">
+			<input id="threshold" class="dial-1" data-min="-100" data-max="0" value="-50" data-width="130"  data-fgColor="yellow" data-thickness="0.2" >
 		</div><!-- threshold-section !-->
 
 		<div class="ratio-section">
-				<label for="ratio">Ratio</label>
-				<input type="range" id="ratio" class="slider"
-				min="1" max="20" step="0.01">
+			<label for="ratio">Ratio</label>
+			<input id="ratio" class="dial-2" data-min="1" data-max="20" value="2" data-width="130" data-fgColor="yellow" data-thickness="0.2">
 		</div><!-- ratio-section !-->
 
 		<div class="attack-section">
 			<label for="attack">Attack</label>
-			<input type="range" id="attack" class="slider"
-			min="0" max="1" step="0.01">
+			<input id="attack" class="dial-3" data-min="0" data-max="1" value="0.250" data-width="130" data-step="0.01" data-fgColor="yellow" data-thickness="0.2">
 		</div><!-- attack-section !-->
 
 		<div class="release-section">
-				<label for="release">Release</label>
-				<input type="range" id="release" class="slider"
-				min="0.1" max="1" step="0.01">
+			<label for="release">Release</label>
+			<input id="release" class="dial-4" data-min="0" data-max="1" value="0.01" data-width="130" data-step="0.01" data-fgColor="yellow" data-thickness="0.2">
 		</div><!-- release-section !-->
-
-		<div class="make-up-gain-section">
-			<label for="make-up-gain">Make-Up Gain</label>
-			<input type="range" id="make-up-gain" class="slider"
-			min="0" max="1" step="0.01">
-		</div><!-- make-up-gain-section !-->
 
 	</div><!-- control-panel !-->
 
+		<div class="make-up-gain-section">
+			<label for="make-up-gain">Make-Up Gain</label>
+			<div id="make-up-gain"></div>
+		</div><!-- make-up-gain-section !-->
 </div><!-- container !-->
-
-
-
 
 <script src="js/main.js"></script>	
 </body>

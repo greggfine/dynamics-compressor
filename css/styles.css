@@ -3,11 +3,9 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 	font: 16px Arial, sans-serif;
-	background-image: url("https://i.pinimg.com/originals/f3/b5/50/f3b5502262ec2ed72977887b3dbce36a.jpg");
+	background-image: url("http://blog.entheosweb.com/wp-content/uploads/2012/01/puple_Swirl.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-blend-mode: multiply;
-	background-color: #DF9936;
 	height: 100vh;
 }
 
@@ -22,13 +20,15 @@ body {
 }
 
 .play-stop-btn button {
-		font-size: 3rem;
+		font-size: 3.5rem;
+		font-weight: 600;
 		color: #fff;
 		padding: 1em 2em;
-		box-shadow: -10px 12px 15px black;
+		box-shadow: 11px 13px #0000005e;
 		border-radius: 6px;
 		transition: transform 0.1s ease;
 		outline: none;
+		letter-spacing: 7px;
 }
 
 .play-stop-btn button:hover {
@@ -41,34 +41,53 @@ body {
 }
 
 .red-bg {
-	background: #CB0002;
+	background: #cf3934;
 }
 
 .control-panel {
 	display: flex;
 	justify-content: center;
-	flex-wrap: wrap;
-	margin-top: 90px;
+	margin-top: 190px;
 	border: 15px double;
 	padding: 200px;
 	background: #cf4a45;
 	font-size: 2rem;
 	font-weight: 800;
 	color: #DF9936;
+	box-shadow: 13px 15px #0000004f;
 }
 
 .threshold-section, .ratio-section, .make-up-gain-section, 
 .attack-section, .release-section {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	margin-top: -140px;
+	padding: 20px;
+	color: yellow;
+	/*border:1px solid;*/
 }
 
 .control-panel label {
 	text-align: center;
-	color: yellow;
+	padding: 20px;
 }
 
 .control-panel .slider {
 	padding: 50px;
 	margin: 30px;
+}
+
+.make-up-gain-section label {
+	text-align: center;
+	margin-top: -60px;
+	padding: 20px;
+	font-size: 2rem;
+}
+
+#make-up-gain {
+	border:1px solid;
+	width: 600px;
+	margin: 0 auto;
+
 }
