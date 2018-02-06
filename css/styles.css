@@ -55,6 +55,16 @@ body {
 	font-weight: 800;
 	color: #DF9936;
 	box-shadow: 13px 15px #0000004f;
+	position: relative;
+	border-radius: 7px;
+}
+
+#ht-logo {
+	position: absolute;
+	top: 300px;
+	left: 670;
+	margin-top: 30px;
+	border-radius: 50%;
 }
 
 .threshold-section, .ratio-section, .make-up-gain-section, 
@@ -62,10 +72,9 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: -140px;
+	margin-top: -120px;
 	padding: 20px;
 	color: yellow;
-	/*border:1px solid;*/
 }
 
 .control-panel label {
