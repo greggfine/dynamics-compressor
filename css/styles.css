@@ -47,9 +47,9 @@ body {
 .control-panel {
 	display: flex;
 	justify-content: center;
-	margin-top: 190px;
+	margin-top: 90px;
 	border: 15px double;
-	padding: 200px;
+	padding: 250px;
 	background: #cf4a45;
 	font-size: 2rem;
 	font-weight: 800;
@@ -61,7 +61,7 @@ body {
 
 #ht-logo {
 	position: absolute;
-	top: 300px;
+	top: 350px;
 	left: 670;
 	margin-top: 30px;
 	border-radius: 50%;
@@ -91,12 +91,90 @@ body {
 	text-align: center;
 	margin-top: -60px;
 	padding: 20px;
-	font-size: 2rem;
+	font-size: 1.8rem;
+	color: yellow;
+	z-index: 1;
 }
 
 #make-up-gain {
 	border:1px solid;
 	width: 600px;
 	margin: 0 auto;
+	background-color: green;
+}
 
+@media (max-width: 1500px){
+	.container {
+		width: 750px;
+		margin: 0 auto;
+	}
+
+
+	.play-stop-btn {
+		text-align: center;
+		margin-top: 30px;
+	}
+
+	.play-stop-btn button {
+			font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 900px){
+
+	.control-panel {
+		display: flex;
+		justify-content: column;
+		flex-wrap: wrap;
+		margin-top: 70px;
+		border: 15px double;
+		padding: 250px;
+		background: #cf4a45;
+		font-size: 2rem;
+		font-weight: 800;
+		color: #DF9936;
+		box-shadow: 13px 15px #0000004f;
+		position: relative;
+		border-radius: 7px;
+	}
+
+	.threshold-section, .ratio-section, .make-up-gain-section, 
+	.attack-section, .release-section {
+		margin-top: -150px;
+		padding: 20px;
+	}
+
+	.control-panel label {
+		text-align: center;
+		padding: 40px;
+	}
+
+	#ht-logo {
+		position: absolute;
+		top: 0px;
+		left: 670;
+	}
+
+	.play-stop-btn {
+		text-align: center;
+		margin-top: 30px;
+	}
+
+	.play-stop-btn button {
+		font-size: 1.5rem;
+	}
+
+	.make-up-gain-section label {
+		margin-top: -180px;
+		font-size: 1.8rem;
+		color: yellow;
+		z-index: 1;
+	}
+
+	#make-up-gain {
+		border:1px solid;
+		width: 400px;
+		margin: 0 auto;
+		background-color: green;
+	}
 }
