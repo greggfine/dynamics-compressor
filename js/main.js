@@ -1,4 +1,5 @@
-var ctx = new (window.AudioContext || window.webkitAudioContext)();
+var AudioContext = window.AudioContext || window.webkitAudioContext;
+var ctx = new AudioContext();
 
 var model = {
 	playing: false,
@@ -58,7 +59,7 @@ var controller = {
 	},
 	getAudio: function(){
 		var http = new XMLHttpRequest();
-		http.open("GET", "/audio/tune2.wav", true)
+		http.open("GET", "audio/tune2.mp3", true)
 		http.responseType = "arraybuffer";
 		http.onload = function(){
 			ctx.decodeAudioData(http.response, function(buffer) {
