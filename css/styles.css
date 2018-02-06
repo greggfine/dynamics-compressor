@@ -4,8 +4,11 @@ body {
 	box-sizing: border-box;
 	font: 16px Arial, sans-serif;
 	background-image: url("https://i.pinimg.com/originals/f3/b5/50/f3b5502262ec2ed72977887b3dbce36a.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-blend-mode: multiply;
-	background-color: #DF9936
+	background-color: #DF9936;
+	height: 100vh;
 }
 
 .container {
@@ -21,17 +24,24 @@ body {
 .play-stop-btn button {
 		font-size: 3rem;
 		color: #fff;
-		padding: 30px;
-		background: red;
+		padding: 1em 2em;
 		box-shadow: -10px 12px 15px black;
 		border-radius: 6px;
-		transition: transform 0.2s ease;
+		transition: transform 0.1s ease;
 		outline: none;
 }
 
 .play-stop-btn button:hover {
 	cursor: pointer;
-	transform: scale(1.03);
+	transform: scale(1.025);
+}
+
+.green-bg {
+	background: green;
+}
+
+.red-bg {
+	background: #CB0002;
 }
 
 .control-panel {
