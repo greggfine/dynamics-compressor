@@ -6,55 +6,66 @@ var model = {
 	audioBuffer: null,
 }
 
+
+
+
+
 var view = {
+
 	init: function() {
+		//Store DOM elements in variables
 		var playStopBtn = document.querySelector(".play-stop-btn");
 		var threshold = document.querySelector("#threshold");
 		var ratio = document.querySelector("#ratio");
 		var makeUpGain = document.querySelector("#make-up-gain");
 
-		playStopBtn.addEventListener("click", function(){
-				controller.startStopAudio();
-		});
+		//Bind EventListeners to DOM elements
+		playStopBtn.addEventListener("click",() => controller.startStopAudio());
 
 		threshold.addEventListener("input", function(){
 			controller.changeThreshold(this.value);
 		});
-
 		ratio.addEventListener("input", function(){
 			controller.changeRatio(this.value);
 		});
-
 		attack.addEventListener("input", function(){
 			controller.changeAttack(this.value);
 		});
-
 		release.addEventListener("input", function(){
 			controller.changeRelease(this.value);
 		});
-
 		makeUpGain.addEventListener("input", function(){
 			controller.changeGain(this.value);
 		});
-		controller.getAudio();
 
+		//Grabs the audio file
+		controller.getAudio();
 	},
+
 	render: function(){
 		controller.playAudio();
 	}
 }
+
+
+
+
 
 var controller = {
 	init: function(){
 		view.init();
 	},
 	startStopAudio: function(){
+		const btn = document.querySelector("button");
 		if(!model.playing){
 			this.play();
 			model.playing = true;
+			btn.classList.remove("red-bg");
+			btn.classList.add("green-bg");
 		} else {
 			this.stop();
 			model.playing = false;
+			btn.classList.add("red-bg");
 		}
 	},
 	getAudio: function(){
@@ -78,6 +89,8 @@ var controller = {
 		this.amp.connect(ctx.destination);
 		this.playSound.start(ctx.currentTime);
 	},
+
+
 	changeThreshold: function(threshVal){
 		this.compressor.threshold.value = threshVal;
 	},
@@ -93,6 +106,9 @@ var controller = {
 	changeRelease: function(releaseVal){
 		this.compressor.release.value = releaseVal;
 	},
+
+
+
 	stop: function(){
 		this.playSound.stop(ctx.currentTime);
 	}
